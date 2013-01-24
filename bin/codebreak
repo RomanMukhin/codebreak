@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'codebreak'
+chatter = Codebreak::Chatter.new
+chatter.start_game
+
+
+
