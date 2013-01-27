@@ -6,32 +6,30 @@ module Codebreak
     end
  
     def start
+
       @output.puts 'Welcome to Codebreaker!'
       begin
         generate
         @number_of_turns, @number_of_hints = 0, 0
         5.times do |i|
           @number_of_turns = i + 1
-          if @number_of_turns == 5
-            @output.puts "This is your last chance to break it!"
-          end
           @output.puts "Enter your guess:"
           @guess_string = gets
         
           if @guess_string =~ /hint/
-            
             @output.puts ask_for_hint
             @output.puts "Enter your guess:"
             @guess_string = gets
           end
           @output.puts answer = guess
-         
+          
           if answer == '++++' 
             @output.puts "Congratulations, You are winner!" 
             break
           elsif answer == ''
-            @output.puts "This code is unbreakable for you"
-            break
+            @output.puts "Noting guessed"
+          elsif @number_of_turns == 4
+            @output.puts "This is your last chance to break it!"
           elsif @number_of_turns == 5
             @output.puts "You didn't get it with 5 turns"
           end
