@@ -6,7 +6,6 @@ module Codebreak
     end
  
     def start
-
       @output.puts 'Welcome to Codebreaker!'
       begin
         generate
@@ -21,8 +20,8 @@ module Codebreak
             @output.puts "Enter your guess:"
             @guess_string = gets
           end
-          @output.puts answer = guess
           
+          @output.puts answer = guess
           if answer == '++++' 
             @output.puts "Congratulations, You are winner!" 
             break
