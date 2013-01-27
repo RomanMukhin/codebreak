@@ -170,7 +170,7 @@ module Codebreak
         game.unstub(:save_result)
       end
       
-      it "prompts after win or lose to save, with asking for player's nickname with calling '#save_result'" do
+      it "prompts after win or lose to save, with asking for player's nickname with calling File.open" do
         game.should_receive(:guess).once.ordered
         output.should_receive(:puts).with( "Do you wanna save?"     ).ordered
         output.should_receive(:puts).with( "What is your nickname?" ).ordered
